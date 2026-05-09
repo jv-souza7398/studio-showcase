@@ -72,10 +72,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "studio. — Websites that live and breathe" },
+      { title: "Teste1. — Sites que ganham vida" },
       { name: "description", content: "An independent studio crafting immersive, high-craft websites for ambitious brands." },
       { name: "author", content: "studio." },
-      { property: "og:title", content: "studio. — Websites that live and breathe" },
+      { property: "og:title", content: "Teste2. — Sites que ganham vida and breathe" },
       { property: "og:description", content: "An independent studio crafting immersive, high-craft websites for ambitious brands." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
