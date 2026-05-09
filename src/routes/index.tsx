@@ -6,6 +6,8 @@ import p3 from "@/assets/project-3.jpg";
 import p4 from "@/assets/project-4.jpg";
 import p5 from "@/assets/project-5.jpg";
 import p6 from "@/assets/project-6.jpg";
+import pJumidia from "@/assets/project-jumidia.png";
+import pVincci from "@/assets/project-vincci.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -20,12 +22,14 @@ type Project = {
 };
 
 const projects: Project[] = [
-  { name: "Maison Lavoir", tagline: "Heritage fashion house, reimagined for the digital floor.", image: p1, url: "#", tag: "Fashion" },
-  { name: "Ostra & Vine", tagline: "A coastal restaurant where every scroll feels like a tasting.", image: p2, url: "#", tag: "Hospitality" },
-  { name: "Fold Architects", tagline: "Quiet portfolio for a studio that builds in concrete.", image: p3, url: "#", tag: "Architecture" },
-  { name: "Hôtel Solène", tagline: "Boutique hotel booking, paced like a cinematic stay.", image: p4, url: "#", tag: "Travel" },
-  { name: "Ember Roastery", tagline: "Single-origin commerce with the warmth of a café.", image: p5, url: "#", tag: "E-commerce" },
-  { name: "Galerie Noir", tagline: "Contemporary gallery presenting works as living rooms.", image: p6, url: "#", tag: "Culture" },
+  { name: "Jumidia Studio", tagline: "Site pessoal de uma publicitária — uma narrativa íntima sobre escolhas e propósito.", image: pJumidia, url: "https://www.jumidia.com.br/", tag: "Pessoal" },
+  { name: "Vincci Bar", tagline: "Coquetelaria autoral para eventos exclusivos, com identidade sofisticada.", image: pVincci, url: "https://vinccibar.com/", tag: "Gastronomia" },
+  { name: "Maison Lavoir", tagline: "Casa de moda histórica, reimaginada para o palco digital.", image: p1, url: "#", tag: "Moda" },
+  { name: "Ostra & Vine", tagline: "Um restaurante litorâneo onde cada rolagem parece uma degustação.", image: p2, url: "#", tag: "Hospitalidade" },
+  { name: "Fold Architects", tagline: "Portfólio silencioso para um estúdio que constrói em concreto.", image: p3, url: "#", tag: "Arquitetura" },
+  { name: "Hôtel Solène", tagline: "Reservas de hotel boutique no ritmo de uma estadia cinematográfica.", image: p4, url: "#", tag: "Viagem" },
+  { name: "Ember Roastery", tagline: "E-commerce de origem única com o aconchego de um café.", image: p5, url: "#", tag: "E-commerce" },
+  { name: "Galerie Noir", tagline: "Galeria contemporânea apresentando obras como salas de estar.", image: p6, url: "#", tag: "Cultura" },
 ];
 
 function Index() {
@@ -61,9 +65,9 @@ function Navbar() {
         </a>
         <ul className="hidden items-center gap-10 text-sm uppercase tracking-[0.2em] text-text-muted md:flex">
           {[
-            { label: "Work", href: "#work" },
-            { label: "About", href: "#about" },
-            { label: "Contact", href: "#contact" },
+            { label: "Projetos", href: "#work" },
+            { label: "Sobre", href: "#about" },
+            { label: "Contato", href: "#contact" },
           ].map((l) => (
             <li key={l.href}>
               <a
@@ -79,7 +83,7 @@ function Navbar() {
           href="#contact"
           className="hidden rounded-full border border-[color:var(--gold)]/40 px-5 py-2 text-xs uppercase tracking-[0.2em] text-gold transition-all hover:bg-gold hover:text-bg md:inline-block"
         >
-          Start a project
+          Iniciar projeto
         </a>
       </nav>
     </header>
@@ -101,7 +105,7 @@ function Hero() {
       />
       <div className="relative mx-auto w-full max-w-7xl">
         <p className="animate-fade-up mb-8 text-xs uppercase tracking-[0.4em] text-gold">
-          Independent design studio · Est. 2020
+          Estúdio de design independente · Desde 2020
         </p>
         <h1
           className="animate-fade-up text-balance font-serif text-[clamp(3rem,9vw,9rem)] leading-[0.95] text-text"
@@ -115,14 +119,14 @@ function Hero() {
           className="animate-fade-up mt-10 max-w-xl text-lg leading-relaxed text-text-muted"
           style={{ animationDelay: "240ms" }}
         >
-          We design immersive digital homes for brands who refuse to feel like everyone else.
+          Criamos lares digitais imersivos para marcas que se recusam a parecer com qualquer outra.
         </p>
 
         <div
           className="animate-fade-up absolute bottom-0 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-text-muted md:flex"
           style={{ animationDelay: "500ms" }}
         >
-          <span className="text-[10px] uppercase tracking-[0.4em]">Scroll</span>
+          <span className="text-[10px] uppercase tracking-[0.4em]">Rolar</span>
           <div className="h-12 w-px bg-gradient-to-b from-[color:var(--gold)] to-transparent">
             <span className="block h-2 w-px animate-scroll-bounce bg-gold" />
           </div>
@@ -158,11 +162,11 @@ function Portfolio() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-20 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <p className="mb-4 text-xs uppercase tracking-[0.4em] text-gold">Selected work</p>
-            <h2 className="font-serif text-5xl text-text md:text-7xl">A small archive.</h2>
+            <p className="mb-4 text-xs uppercase tracking-[0.4em] text-gold">Trabalhos selecionados</p>
+            <h2 className="font-serif text-5xl text-text md:text-7xl">Um pequeno acervo.</h2>
           </div>
           <p className="max-w-sm text-text-muted">
-            Six recent pieces. Use the arrows, swipe, or click a card to step inside.
+            Peças recentes. Use as setas, deslize ou clique em um card para entrar.
           </p>
         </div>
 
@@ -191,7 +195,7 @@ function Portfolio() {
               <button
                 key={p.name}
                 onClick={() => (i === active ? setFocused(i) : setActive(i))}
-                aria-label={i === active ? `Open ${p.name}` : `View ${p.name}`}
+                aria-label={i === active ? `Abrir ${p.name}` : `Ver ${p.name}`}
                 className="card-3d group absolute h-[460px] w-[680px] max-w-[80vw] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-surface text-left"
                 style={{
                   transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg)`,
@@ -227,7 +231,7 @@ function Portfolio() {
                   </div>
                   {abs === 0 && (
                     <span className="shrink-0 rounded-full border border-[color:var(--gold)]/50 px-4 py-2 text-[10px] uppercase tracking-[0.3em] text-gold transition-colors group-hover:bg-gold group-hover:text-bg">
-                      Enter →
+                      Entrar →
                     </span>
                   )}
                 </div>
@@ -243,7 +247,7 @@ function Portfolio() {
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                aria-label={`Go to project ${i + 1}`}
+                aria-label={`Ir para projeto ${i + 1}`}
                 className={`h-px transition-all ${
                   i === active ? "w-12 bg-gold" : "w-6 bg-[color:var(--text-muted)]/40 hover:bg-[color:var(--text-muted)]"
                 }`}
@@ -253,14 +257,14 @@ function Portfolio() {
           <div className="flex items-center gap-3">
             <button
               onClick={prev}
-              aria-label="Previous"
+              aria-label="Anterior"
               className="grid h-12 w-12 place-items-center rounded-full border border-[color:var(--border)] text-text-muted transition-all hover:border-gold hover:text-gold"
             >
               ←
             </button>
             <button
               onClick={next}
-              aria-label="Next"
+              aria-label="Próximo"
               className="grid h-12 w-12 place-items-center rounded-full border border-[color:var(--border)] text-text-muted transition-all hover:border-gold hover:text-gold"
             >
               →
@@ -293,7 +297,7 @@ function Portfolio() {
                   rel="noreferrer"
                   className="mt-5 inline-block rounded-full border border-[color:var(--gold)]/50 px-5 py-2 text-[10px] uppercase tracking-[0.3em] text-gold"
                 >
-                  View site →
+                  Ver site →
                 </a>
               </div>
             </article>
@@ -328,7 +332,7 @@ function FocusView({ project, onClose }: { project: Project; onClose: () => void
       >
         <button
           onClick={onClose}
-          aria-label="Close"
+          aria-label="Fechar"
           className="absolute right-5 top-5 z-10 grid h-10 w-10 place-items-center rounded-full border border-[color:var(--border)] bg-bg/60 text-text-muted backdrop-blur transition hover:border-gold hover:text-gold"
         >
           ✕
@@ -352,7 +356,7 @@ function FocusView({ project, onClose }: { project: Project; onClose: () => void
             rel="noreferrer"
             className="rounded-full bg-gold px-7 py-3 text-xs uppercase tracking-[0.3em] text-bg transition hover:bg-gold-soft"
           >
-            View site →
+            Ver site →
           </a>
         </div>
       </div>
@@ -362,24 +366,24 @@ function FocusView({ project, onClose }: { project: Project; onClose: () => void
 
 function About() {
   const stats = [
-    { value: "12", label: "Projects shipped" },
-    { value: "5", label: "Years of practice" },
-    { value: "3", label: "Countries served" },
+    { value: "12", label: "Projetos entregues" },
+    { value: "5", label: "Anos de prática" },
+    { value: "3", label: "Países atendidos" },
   ];
   return (
     <section id="about" className="relative px-6 py-32 md:px-10">
       <div className="mx-auto grid max-w-7xl gap-16 md:grid-cols-2 md:gap-24">
         <div>
-          <p className="mb-4 text-xs uppercase tracking-[0.4em] text-gold">About the studio</p>
+          <p className="mb-4 text-xs uppercase tracking-[0.4em] text-gold">Sobre o estúdio</p>
           <h2 className="font-serif text-5xl text-text md:text-6xl">
-            Quiet craft, <em className="italic text-text-muted">loud</em> intent.
+            Ofício discreto, <em className="italic text-text-muted">intenção</em> alta.
           </h2>
         </div>
         <div className="flex flex-col gap-10">
           <p className="text-lg leading-relaxed text-text-muted">
-            studio. is a two-person practice designing and building websites for hospitality,
-            culture and considered commerce. We work in small batches, treat type as a material,
-            and ship sites that feel as good as they look — six months later.
+            studio. é uma prática de duas pessoas que projeta e desenvolve sites para hospitalidade,
+            cultura e comércio cuidadoso. Trabalhamos em pequenos lotes, tratamos a tipografia como matéria-prima
+            e entregamos sites que continuam tão bons quanto parecem — seis meses depois.
           </p>
           <div className="grid grid-cols-3 gap-6 border-t border-[color:var(--border)] pt-10">
             {stats.map((s) => (
@@ -408,10 +412,10 @@ function Contact() {
             "linear-gradient(160deg, rgba(78,61,43,0.6), rgba(45,34,30,0.9))",
         }}
       >
-        <p className="mb-4 text-xs uppercase tracking-[0.4em] text-gold">Contact</p>
-        <h2 className="font-serif text-5xl text-text md:text-6xl">Let's make something quiet.</h2>
+        <p className="mb-4 text-xs uppercase tracking-[0.4em] text-gold">Contato</p>
+        <h2 className="font-serif text-5xl text-text md:text-6xl">Vamos criar algo silencioso.</h2>
         <p className="mt-4 max-w-lg text-text-muted">
-          Tell us about your brand. We reply within two working days.
+          Conte-nos sobre sua marca. Respondemos em até dois dias úteis.
         </p>
 
         <form
@@ -422,19 +426,19 @@ function Contact() {
           className="mt-12 grid gap-6"
         >
           <div className="grid gap-6 md:grid-cols-2">
-            <Field label="Name" name="name" type="text" />
-            <Field label="Email" name="email" type="email" />
+            <Field label="Nome" name="name" type="text" />
+            <Field label="E-mail" name="email" type="email" />
           </div>
-          <Field label="Message" name="message" textarea />
+          <Field label="Mensagem" name="message" textarea />
           <div className="flex items-center justify-between">
             <span className="text-xs text-text-muted">
-              {sent ? "Thank you — we'll be in touch." : "We read every message."}
+              {sent ? "Obrigado — entraremos em contato." : "Lemos cada mensagem."}
             </span>
             <button
               type="submit"
               className="rounded-full bg-gold px-8 py-3 text-xs uppercase tracking-[0.3em] text-bg transition hover:bg-gold-soft"
             >
-              Send →
+              Enviar →
             </button>
           </div>
         </form>
@@ -474,7 +478,7 @@ function Footer() {
   return (
     <footer className="border-t border-[color:var(--border)] px-6 py-10 md:px-10">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 text-xs text-text-muted md:flex-row">
-        <span>© {new Date().getFullYear()} studio. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} studio. Todos os direitos reservados.</span>
         <div className="flex items-center gap-5">
           {[
             { label: "GitHub", href: "https://github.com" },
