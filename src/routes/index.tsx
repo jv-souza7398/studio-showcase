@@ -107,9 +107,9 @@ function Hero() {
           className="animate-fade-up text-balance font-serif text-[clamp(3rem,9vw,9rem)] leading-[0.95] text-text"
           style={{ animationDelay: "120ms" }}
         >
-          Websites that <em className="italic text-text-muted">live</em>
+          Sites que ganham <em className="italic text-text-muted">vida</em>
           <br />
-          and breathe.
+          e respiram.
         </h1>
         <p
           className="animate-fade-up mt-10 max-w-xl text-lg leading-relaxed text-text-muted"
