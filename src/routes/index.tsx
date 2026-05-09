@@ -8,6 +8,7 @@ import p5 from "@/assets/project-5.jpg";
 import p6 from "@/assets/project-6.jpg";
 import pJumidia from "@/assets/project-jumidia.png";
 import pVincci from "@/assets/project-vincci.png";
+import pFresh from "@/assets/project-fresh.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -24,6 +25,7 @@ type Project = {
 const projects: Project[] = [
   { name: "Jumidia Studio", tagline: "Site pessoal de uma publicitária — uma narrativa íntima sobre escolhas e propósito.", image: pJumidia, url: "https://www.jumidia.com.br/", tag: "Pessoal" },
   { name: "Vincci Bar", tagline: "Coquetelaria autoral para eventos exclusivos, com identidade sofisticada.", image: pVincci, url: "https://vinccibar.com/", tag: "Gastronomia" },
+  { name: "Fresh Hortifruti", tagline: "Frutas e verduras sempre frescas — entrega rápida e identidade vibrante.", image: pFresh, url: "https://v0-hortifruti-website-prototype.vercel.app/", tag: "Hortifruti" },
   { name: "Maison Lavoir", tagline: "Casa de moda histórica, reimaginada para o palco digital.", image: p1, url: "#", tag: "Moda" },
   { name: "Ostra & Vine", tagline: "Um restaurante litorâneo onde cada rolagem parece uma degustação.", image: p2, url: "#", tag: "Hospitalidade" },
   { name: "Fold Architects", tagline: "Portfólio silencioso para um estúdio que constrói em concreto.", image: p3, url: "#", tag: "Arquitetura" },
