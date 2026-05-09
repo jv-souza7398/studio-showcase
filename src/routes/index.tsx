@@ -61,7 +61,7 @@ function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
         <a href="#top" className="font-serif text-2xl tracking-tight text-text">
-          studio<span className="text-gold">.</span>
+          EasyUse<span className="text-gold">.</span>
         </a>
         <ul className="hidden items-center gap-10 text-sm uppercase tracking-[0.2em] text-text-muted md:flex">
           {[
@@ -478,7 +478,7 @@ function Footer() {
   return (
     <footer className="border-t border-[color:var(--border)] px-6 py-10 md:px-10">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 text-xs text-text-muted md:flex-row">
-        <span>© {new Date().getFullYear()} studio. Todos os direitos reservados.</span>
+        <span>© {new Date().getFullYear()} EasyUSe. Todos os direitos reservados.</span>
         <div className="flex items-center gap-5">
           {[
             { label: "GitHub", href: "https://github.com" },
