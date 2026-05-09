@@ -75,11 +75,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Teste1. — Sites que ganham vida" },
       { name: "description", content: "An independent studio crafting immersive, high-craft websites for ambitious brands." },
       { name: "author", content: "studio." },
-      { property: "og:title", content: "Teste2. — Sites que ganham vida and breathe" },
+      { property: "og:title", content: "Teste1. — Sites que ganham vida" },
       { property: "og:description", content: "An independent studio crafting immersive, high-craft websites for ambitious brands." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Teste1. — Sites que ganham vida" },
+      { name: "twitter:description", content: "An independent studio crafting immersive, high-craft websites for ambitious brands." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/65872b28-83a6-4e64-a695-8449643e40a3/id-preview-0feb095a--3f446fda-5b39-4a61-add3-a5de2b25e20a.lovable.app-1778290449456.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/65872b28-83a6-4e64-a695-8449643e40a3/id-preview-0feb095a--3f446fda-5b39-4a61-add3-a5de2b25e20a.lovable.app-1778290449456.png" },
     ],
     links: [
       {
