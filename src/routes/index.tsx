@@ -147,21 +147,6 @@ function Portfolio() {
   const prev = () => setActive((i) => (i - 1 + projects.length) % projects.length);
 
   const wheelLockRef = useRef(0);
-  const onWheel = (e: React.WheelEvent<HTMLDivElement>) => {
-    if (focused !== null) return;
-    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-    if (Math.abs(delta) < 8) return;
-    const now = Date.now();
-    if (now - wheelLockRef.current < 450) {
-      e.preventDefault();
-      return;
-    }
-    wheelLockRef.current = now;
-    e.preventDefault();
-    if (delta > 0) next();
-    else prev();
-  };
-
   // Non-passive wheel listener so preventDefault works
   useEffect(() => {
     const el = stageRef.current;
