@@ -23,19 +23,19 @@
 }
 
 :root {
-  --bg: #2D221E;
-  --bg-2: #4E3D2B;
-  --bg-3: #4F3E2C;
-  --surface: #664E32;
-  --surface-2: #685132;
-  --surface-3: #674F33;
-  --gold: #9E8253;
-  --gold-soft: #A08253;
-  --bronze: #695132;
-  --text: #F5ECD7;
-  --text-muted: #C4A882;
-  --text-accent: #9E8253;
-  --border: rgba(158, 130, 83, 0.25);
+  --bg: #F7F8FB;
+  --bg-2: #E6EBF5;
+  --bg-3: #E6EBF5;
+  --surface: #E6EBF5;
+  --surface-2: #E6EBF5;
+  --surface-3: #F7F8FB;
+  --gold: #0A2DFF;
+  --gold-soft: #0A2DFF;
+  --bronze: #0A2DFF;
+  --text: #111827;
+  --text-muted: #6B7280;
+  --text-accent: #0A2DFF;
+  --border: rgba(10, 45, 255, 0.18);
   --background: var(--bg);
   --foreground: var(--text);
 }
@@ -59,7 +59,7 @@
   .grain::before {
     content: "";
     position: fixed; inset: 0; pointer-events: none; z-index: 1;
-    background-image: radial-gradient(rgba(245,236,215,0.04) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(17,24,39,0.05) 1px, transparent 1px);
     background-size: 3px 3px; mix-blend-mode: overlay; opacity: 0.5;
   }
 
@@ -75,8 +75,8 @@
   }
   .gold-glow {
     box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6),
-                0 0 0 1px rgba(158,130,83,0.25),
-                0 0 60px -10px rgba(158,130,83,0.35);
+                0 0 0 1px rgba(10,45,255,0.25),
+                0 0 60px -10px rgba(10,45,255,0.35);
   }
 
   @keyframes scroll-bounce {
