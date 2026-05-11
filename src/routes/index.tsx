@@ -102,7 +102,7 @@ function Hero() {
         className="pointer-events-none absolute inset-0 opacity-60"
         style={{
           background:
-            "radial-gradient(ellipse at 20% 20%, rgba(158,130,83,0.12), transparent 50%), radial-gradient(ellipse at 80% 60%, rgba(105,81,50,0.18), transparent 55%)",
+            "radial-gradient(ellipse at 20% 20%, rgba(10,45,255,0.14), transparent 50%), radial-gradient(ellipse at 80% 60%, rgba(10,45,255,0.10), transparent 55%)",
         }}
       />
       <div className="relative mx-auto w-full max-w-7xl">
@@ -222,17 +222,17 @@ function Portfolio() {
                   className="absolute inset-0"
                   style={{
                     background:
-                      "linear-gradient(180deg, rgba(45,34,30,0) 30%, rgba(45,34,30,0.85) 80%, rgba(45,34,30,0.95) 100%)",
+                      "linear-gradient(180deg, rgba(10,45,255,0) 30%, rgba(10,45,255,0.78) 80%, rgba(10,45,255,0.95) 100%)",
                   }}
                 />
                 <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-6 p-8">
                   <div>
-                    <p className="mb-2 text-[10px] uppercase tracking-[0.4em] text-gold">{p.tag}</p>
-                    <h3 className="font-serif text-3xl text-text">{p.name}</h3>
-                    <p className="mt-2 max-w-md text-sm text-text-muted">{p.tagline}</p>
+                    <p className="mb-2 text-[10px] uppercase tracking-[0.4em] text-white/80">{p.tag}</p>
+                    <h3 className="font-serif text-3xl text-white">{p.name}</h3>
+                    <p className="mt-2 max-w-md text-sm text-white/80">{p.tagline}</p>
                   </div>
                   {abs === 0 && (
-                    <span className="shrink-0 rounded-full border border-[color:var(--gold)]/50 px-4 py-2 text-[10px] uppercase tracking-[0.3em] text-gold transition-colors group-hover:bg-gold group-hover:text-bg">
+                    <span className="shrink-0 rounded-full border border-white/60 bg-white/10 px-4 py-2 text-[10px] uppercase tracking-[0.3em] text-white transition-colors group-hover:bg-white group-hover:text-gold">
                       Entrar →
                     </span>
                   )}
@@ -408,15 +408,15 @@ function Contact() {
   return (
     <section id="contact" className="relative px-6 py-32 md:px-10">
       <div
-        className="mx-auto max-w-4xl rounded-3xl border border-[color:var(--border)] p-10 md:p-16"
+        className="mx-auto max-w-4xl rounded-3xl border border-[color:var(--gold)]/30 p-10 md:p-16 gold-glow"
         style={{
           background:
-            "linear-gradient(160deg, rgba(78,61,43,0.6), rgba(45,34,30,0.9))",
+            "linear-gradient(160deg, #0A2DFF 0%, #0822c2 100%)",
         }}
       >
-        <p className="mb-4 text-xs uppercase tracking-[0.4em] text-gold">Contato</p>
-        <h2 className="font-serif text-5xl text-text md:text-6xl">Vamos criar algo silencioso.</h2>
-        <p className="mt-4 max-w-lg text-text-muted">
+        <p className="mb-4 text-xs uppercase tracking-[0.4em] text-white/70">Contato</p>
+        <h2 className="font-serif text-5xl text-white md:text-6xl">Vamos criar algo silencioso.</h2>
+        <p className="mt-4 max-w-lg text-white/75">
           Conte-nos sobre sua marca. Respondemos em até dois dias úteis.
         </p>
 
@@ -428,17 +428,17 @@ function Contact() {
           className="mt-12 grid gap-6"
         >
           <div className="grid gap-6 md:grid-cols-2">
-            <Field label="Nome" name="name" type="text" />
-            <Field label="E-mail" name="email" type="email" />
+            <Field label="Nome" name="name" type="text" onDark />
+            <Field label="E-mail" name="email" type="email" onDark />
           </div>
-          <Field label="Mensagem" name="message" textarea />
+          <Field label="Mensagem" name="message" textarea onDark />
           <div className="flex items-center justify-between">
-            <span className="text-xs text-text-muted">
+            <span className="text-xs text-white/70">
               {sent ? "Obrigado — entraremos em contato." : "Lemos cada mensagem."}
             </span>
             <button
               type="submit"
-              className="rounded-full bg-gold px-8 py-3 text-xs uppercase tracking-[0.3em] text-bg transition hover:bg-gold-soft"
+              className="rounded-full bg-white px-8 py-3 text-xs uppercase tracking-[0.3em] text-gold transition hover:bg-bg-2"
             >
               Enviar →
             </button>
@@ -454,17 +454,20 @@ function Field({
   name,
   type = "text",
   textarea = false,
+  onDark = false,
 }: {
   label: string;
   name: string;
   type?: string;
   textarea?: boolean;
+  onDark?: boolean;
 }) {
-  const cls =
-    "w-full bg-transparent border-b border-[color:var(--border)] py-3 text-text placeholder:text-text-muted/50 focus:border-gold focus:outline-none transition-colors";
+  const cls = onDark
+    ? "w-full bg-transparent border-b border-white/30 py-3 text-white placeholder:text-white/40 focus:border-white focus:outline-none transition-colors"
+    : "w-full bg-transparent border-b border-[color:var(--border)] py-3 text-text placeholder:text-text-muted/50 focus:border-gold focus:outline-none transition-colors";
   return (
     <label className="block">
-      <span className="mb-2 block text-[10px] uppercase tracking-[0.3em] text-text-muted">
+      <span className={`mb-2 block text-[10px] uppercase tracking-[0.3em] ${onDark ? "text-white/70" : "text-text-muted"}`}>
         {label}
       </span>
       {textarea ? (
